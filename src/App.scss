@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   color: white;
   background-color: black;
+  font-family: 'Kanit', sans-serif;
+}
+
+.listProducts{
+  display:flex;
+  align-items:center;
+}
+.listProducts2{
+  display:flex;
+  align-items:center;
 }
