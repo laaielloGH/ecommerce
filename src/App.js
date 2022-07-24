@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <NavBar />
       <div>
-        <ItemListContainer calzado="Calzado"/>
+        <ItemListContainer calzado="Tienda Nike"/>
        
       </div>  
     </div>
