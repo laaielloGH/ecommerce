@@ -1,7 +1,8 @@
-import "./ItemProduct.scss"
+import "./Item.scss"
 import ItemCount from "../ItemCount/ItemCount"
 
-const ItemProduct = ({title, price, image, stock}) => {
+const Item = ({data}) => {
+    const {title, price, image, stock} = data
     
     return(
         <div className="cardProduct">
@@ -15,4 +16,4 @@ const ItemProduct = ({title, price, image, stock}) => {
     )
 }
 
-export default ItemProduct
+export default Item
