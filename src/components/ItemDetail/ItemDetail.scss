@@ -1,0 +1,82 @@
+
+.detailProduct{
+    float: left;
+    display:flex;
+    text-align: center;
+    margin: 70px;
+    img{
+        width: 737px;
+    }
+    button{
+        border-color: white;
+        margin: 5px;
+        cursor: pointer;
+        &:hover{
+            color: grey;
+            border-color: grey;
+        }
+    }
+}
+.infoProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+    h2{
+        font-size: 57px;
+        border-bottom: outset;
+    }
+    p{
+        margin-left: 11px;
+    }
+    span{
+        margin-top:15px;
+        margin-left: 14px;
+        font-size: 21px;
+    }
+}
+.price{
+    font-size: 40px;
+    color: darkgoldenrod;
+}
+.info2Product{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: -50%;
+    margin-top: 404px;
+    button{
+        padding: 7px;
+        font-size: 26px;
+        border-radius: 16px;
+    }
+  
+}
+.talles{
+    display: flex;
+    margin-left: 9px;
+    button{
+        padding: 9px;
+        font-size: 17px;  
+    }
+    
+}
+.stockDetalle{
+    margin-top: 401px;
+    margin-left: 69px;
+    span{
+        font-size: 20px;
+    }
+}
+
+.detailDescription{
+    display: flex;
+    align-items: flex-start;
+    margin-top: -12px;
+    background: none;
+    text-align: left;
+    flex-direction: column;
+    span{
+        margin-left:10px;
+    }
+}
