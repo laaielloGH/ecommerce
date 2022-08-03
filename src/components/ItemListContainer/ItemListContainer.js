@@ -2,15 +2,23 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.scss"
 import products from "../../utils/productsMock"
-
+import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({calzado}) => {
 
+    const {category} = useParams()
+    const filterByCategory = products.filter((products) => products.category === category)
     const [listProducts, setListProducts] = useState([])
+   
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout( () => {
-            resolve(products)
+            if(category === "Urbanas" || category === "Deportivas"){
+                resolve (filterByCategory)
+            }
+            else{
+                resolve(products)
+            }
         },2000) 
     })
 
@@ -23,7 +31,18 @@ const ItemListContainer = ({calzado}) => {
                 console.log("Hubo un fallo")
             })
             .finally(()=>{})
+
+            
     }, [])
+
+    // const filterByCategory = () =>{
+    //     products.some((producto)=>{
+    //         if(producto.category == category){
+    //             setListProducts(producto)
+    //         }
+    //     })
+    // }
+
 
     
     return(

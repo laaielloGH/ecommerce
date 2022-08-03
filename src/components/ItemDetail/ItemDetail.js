@@ -22,10 +22,10 @@ const ItemDetail = ({data}) =>{
 
                 <span>Talles</span>
                 <div className="talles">
-                    <button>S</button>
-                    <button>M</button>
-                    <button>L</button>
-                    <button>XL</button>
+                    <button>38</button>
+                    <button>40</button>
+                    <button>42</button>
+                    <button>43</button>
                 </div> 
             </div>
 
