@@ -8,14 +8,15 @@ Disponible solamente para clonacion.
 
 ### `$ git clone https://github.com/Lautaro-Aiello/ecommerce.git`
 
-## Dependencias utilizadas
+### Dependencias utilizadas
 
 En este proyecto se utilizaron todas las dependencias utilizadas en clase.
 
-## Dependencias externas 
+### Dependencias externas 
 
 Material ui: utilizada unicamente para mostrar el CartWidget.
-Su instalacion: npm install @mui/material @emotion/react @emotion/styled
+
+#### Su instalacion: npm install @mui/material @emotion/react @emotion/styled
 
 ## Licencia
 
