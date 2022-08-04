@@ -13,7 +13,7 @@ const ItemListContainer = ({calzado}) => {
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout( () => {
-            if(category === "Urbanas" || category === "Deportivas"){
+            if(category === "urbana" || category === "deportiva"){
                 resolve (filterByCategory)
             }
             else{
