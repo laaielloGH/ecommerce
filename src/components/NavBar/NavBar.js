@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
+    
     return(
         <div className="navBarStyle">
             <Link to="/"><img src="/assets/nikelogo.png" alt="Nike Logo"/></Link>
