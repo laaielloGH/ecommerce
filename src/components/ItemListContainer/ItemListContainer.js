@@ -6,14 +6,15 @@ import { useParams } from "react-router-dom"
 
 const ItemListContainer = ({calzado}) => {
 
-    const {category} = useParams()
-    // const filterByCategory = products.filter((products) => products.category === category)
+    const {categoryid} = useParams()
+    console.log(categoryid)
+    const filterByCategory = products.filter((productos) => productos.category === categoryid)
     const [listProducts, setListProducts] = useState([])
-   
+
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout( () => {
-            if(category === "urbana" || category === "deportiva"){
+            if(categoryid === "urbana" || categoryid === "deportiva"){
                 resolve (filterByCategory)
             }
             else{
@@ -31,18 +32,10 @@ const ItemListContainer = ({calzado}) => {
                 console.log("Hubo un fallo")
             })
             .finally(()=>{})
-
-            filterByCategory()
             
-    }, [])
+    }, [categoryid])
 
-    const filterByCategory = () =>{
-        products.some((producto)=>{
-            if(producto.category == category){
-                setListProducts(producto)
-            }
-        })
-    }
+
 
 
     

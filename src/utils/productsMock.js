@@ -46,7 +46,7 @@ const products = [
         price:24000, 
         image:`nikeroja2.jpg`,
         stock:5,
-        category:"deprotiva",
+        category:"deportiva",
         description: "Estas zapatillas estan diseñadas para que des el 100% en tus entrenamientos y estes super comodo a la vez",
         description2: "Están confeccionadas con material al menos en un 20% reciclado, suave al tacto y cómodo que reemplaza la piel de alto impacto."
     },
