@@ -39,7 +39,7 @@ const ItemDetail = ({data}) =>{
     
             <div className="stockDetalle">
                 {
-                    quantitySelected > 0 ? <Link to="/cart"><button className="botonFinishCompra">Terminar Compra</button></Link> : <ItemCountDetail stock={stock} setQuantitySelected={setQuantitySelected}/>
+                    quantitySelected > 0 ? <Link to="/cart"><button className="botonFinishCompra">Terminar Compra</button></Link> : <ItemCountDetail stock={stock} setQuantitySelected={setQuantitySelected} productData={data}/>
                 }
                 
             </div>    

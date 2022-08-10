@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import "./ItemCountDetail.scss"
+import { CartContext } from "../Context/CartContext"
 
 
-const ItemCountDetail = ({stock, setQuantitySelected}) => {
+const ItemCountDetail = ({stock, setQuantitySelected, productData}) => {
+    const {addProductCart} = useContext(CartContext)
     let stockRopa = stock 
     let disable = false
     const [contador, setContador] = useState(1)
@@ -25,6 +27,7 @@ const ItemCountDetail = ({stock, setQuantitySelected}) => {
     }
 
     const onAdd = () =>{
+        addProductCart(productData)
         setQuantitySelected(contador)
     }
 
