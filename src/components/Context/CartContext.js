@@ -8,8 +8,8 @@ const CartProvider = ({children}) =>{
 
 
     const addProductCart = (productos) =>{
-        const productInCart = cartProducts.some( item => item.id === productos.id )
-        if (productInCart === true){
+        const productInCart = cartProducts.find( item => item.id === productos.id )
+        if (productInCart){
          const copyArray = cartProducts.map ((item) => {
             if(item.id === productos.id){
                 return {
