@@ -17,7 +17,7 @@ const CartWidget = () => {
     
     };
 
-    const {cartProducts, clear} = useContext(CartContext)
+    const {cartProducts, clear, removeFromCart} = useContext(CartContext)
 
     return(
         
@@ -47,7 +47,7 @@ const CartWidget = () => {
                             <p>$ {producto.price}</p>
                         </div>
                         <div className='cart-product__action' >
-                                <DeleteIcon/>
+                                <DeleteIcon onClick={() => removeFromCart(producto.id)}/>
                         </div>
                     </div>
                     )

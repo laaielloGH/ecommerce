@@ -10,9 +10,9 @@ const ItemDetailContainer = ({title}) => {
 
 
     const getItem = new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            resolve(products.some())
-        }, 2000)
+        
+        resolve(products.some())
+        
     })
 
     useEffect(() =>{

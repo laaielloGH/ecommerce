@@ -27,7 +27,7 @@ const ItemCountDetail = ({stock, setQuantitySelected, productData}) => {
     }
 
     const onAdd = () =>{
-        addProductCart(productData)
+        addProductCart(productData, contador)
         setQuantitySelected(contador)
     }
 

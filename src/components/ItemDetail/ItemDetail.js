@@ -10,7 +10,6 @@ const ItemDetail = ({data}) =>{
 
     const [quantitySelected, setQuantitySelected] = useState(0)
 
-    console.log(quantitySelected)
     return (
         <div className="detailProduct">
             <div className="imageProduct">

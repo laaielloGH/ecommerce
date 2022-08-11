@@ -13,14 +13,14 @@ const ItemListContainer = ({calzado}) => {
 
 
     const getProducts = new Promise ((resolve, reject) => {
-        setTimeout( () => {
-            if(categoryid === "urbana" || categoryid === "deportiva"){
-                resolve (filterByCategory)
-            }
-            else{
-                resolve(products)
-            }
-        },2000) 
+        
+        if(categoryid === "urbana" || categoryid === "deportiva"){
+            resolve (filterByCategory)
+        }
+        else{
+            resolve(products)
+        }
+        
     })
 
     useEffect(() =>{
