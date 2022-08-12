@@ -10,7 +10,6 @@ import Detalle from "./pages/Detalle"
 import Checkout from "./pages/Checkout"
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartProvider from './components/Context/CartContext';
-import Carrito from "./pages/Carrito"
 
 function App() {
   return (
@@ -26,7 +25,6 @@ function App() {
             <Route path="/nosotros" element={<Nosotros/>}/>
             <Route path="/productos/:id" element={<Detalle/>}/>
             <Route path="/cart" element={<Checkout/>}/>
-            <Route path="/carrito" element={<Carrito/>}/>
             <Route path="*" element={<h1>ERROR 404 - PAGINA NO ENCONTRADA</h1>}/>
           </Routes>
         </div>

@@ -59,7 +59,7 @@
     padding: 5px;
     font-size: 15px;
     margin-top: 7px;
-    margin-left: 186px;
+    margin-left: 350px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -71,4 +71,24 @@
 
 .iconoCarrito{
     cursor:pointer;
+}
+
+.carritoVacio{
+    margin-left: 233px;
+    padding: 7px;
+    border-radius: 12px;
+    border: solid;
+    font-size: 21px;
+}
+
+.finalizarCompraCart{
+    margin-left: -440px;
+    border: solid 1px;
+    border-radius: 7px;
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover{
+        color:grey;
+    }
 }

@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useContext } from "react"
 import { CartContext } from "../Context/CartContext"
 import {useState} from "react"
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
@@ -44,7 +45,7 @@ const CartWidget = () => {
                             <p>{producto.title}</p>
                         </div>
                         <div className='cart-product__details'>
-                            <p>$ {producto.price}</p>
+                            <p>$ {parseInt(producto.contador) * (producto.price) }</p>
                         </div>
                         <div className='cart-product__action' >
                                 <DeleteIcon onClick={() => removeFromCart(producto.id)}/>
@@ -52,7 +53,8 @@ const CartWidget = () => {
                     </div>
                     )
                 })}
-                {cartProducts == 0 ? " " : <button className="botonVaciar" onClick={() => clear()}>Vaciar Carrito</button>}
+                {cartProducts == 0 ? <h1 className='carritoVacio'>El Carrito esta vacio!</h1> : <button className="botonVaciar" onClick={() => clear()}>Vaciar Carrito</button>}
+                {cartProducts == 0 ? " " : <Link to="/cart"><button className="finalizarCompraCart" onClick={handleClose}> Finalizar Compra </button></Link>}
             </Menu>
         </div>
     )
