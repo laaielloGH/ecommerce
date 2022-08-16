@@ -1,0 +1,91 @@
+
+
+.tablaCarrito{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 270px;
+    margin-right: 270px;
+    border: solid 1px;
+    border-radius: 6px;
+    padding: 9px;
+    margin-top: 27px;
+}
+.tabla{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 473px;
+    font-size: 27px;
+    margin-top: 90px;
+}
+
+.imagenFinal{
+ width: 13%;
+}
+.borrar{
+    margin-right: 89px;
+}
+
+.botonBorrar{
+    margin-right: 36px;
+}
+
+.botonesFinalizar{
+    display: flex;
+    justify-content: space-around;
+}
+.finish{
+    border: solid 1px;
+    margin-top: 20px;
+    margin-left: 54px;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 16px;
+    cursor:pointer;
+    &:hover{
+        color: gray;
+    }
+}
+.vaciarCarrito{
+    border: solid 1px;
+    margin-top: 20px;
+    margin-left: -108px;
+    border-radius: 5px;
+    padding: 8px;
+    cursor:pointer;
+    &:hover{
+        color: gray;
+    }
+}
+.totalCarrito{
+    margin-top: 13px;
+    margin-right: -102px;
+    margin-left: 23px;
+}
+
+
+.buttons-checkout{
+    display: flex;
+    align-items: baseline;
+}
+
+.carritoSinArticulos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    margin-top: 163px;
+    box-sizing: border-box;
+    button{
+        border: solid 1px;
+        border-radius: 7px;
+        padding: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 19px;
+        &:hover{
+            color:grey;
+        }
+    }
+}

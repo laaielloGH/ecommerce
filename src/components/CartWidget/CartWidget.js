@@ -18,12 +18,14 @@ const CartWidget = () => {
     
     };
 
-    const {cartProducts, clear, removeFromCart} = useContext(CartContext)
+
+    const {cartProducts, clear, removeFromCart, cantidad} = useContext(CartContext)
 
     return(
         
         <div className="cart-widget">
-            <ShoppingCartIcon   className="iconoCarrito"
+            {cartProducts.length > 0 ? <p>{cantidad}</p> : " "}
+            <ShoppingCartIcon className="iconoCarrito"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}

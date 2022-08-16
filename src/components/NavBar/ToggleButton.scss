@@ -1,0 +1,27 @@
+
+.dropdown-toggle.btn.btn-secondary{
+    background-color: black !important;
+    margin-top: 26px !important;
+    margin-right: 4px !important;
+    font-size: 17px !important;
+    margin-left: 24px !important;
+    color: white !important;
+    border: none !important;
+}
+
+.navBar{
+    a{
+        color: black !important;
+        background: #fff !important;
+        text-decoration: none !important;
+        &:hover{
+            color: grey !important;
+        }
+    }
+}
+
+button.dropdown-item{
+    &:hover{
+        color: #fff !important;
+    }
+}
