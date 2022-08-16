@@ -14,12 +14,14 @@
 
 ## **Dependencias externas**
 
-*Material ui: utilizada unicamente para mostrar el CartWidget.*
-*Bootstrap: utilizada unicamente para realizar un Dropdown Button.*
+#### *Material ui: utilizada unicamente para mostrar el CartWidget.*
+
+#### *Bootstrap: utilizada unicamente para realizar un Dropdown Button.*
 
 ### **Su instalacion:**
-npm install @mui/material @emotion/react @emotion/styled
-npm i bootstrap reactstrap
+#### npm install @mui/material @emotion/react @emotion/styled
+
+#### npm i bootstrap reactstrap
 
 ## **Licencia**
 
