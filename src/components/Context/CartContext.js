@@ -7,7 +7,7 @@ const CartProvider = ({children}) =>{
     const [cantidad, setCantidad] = useState (0)
     const [totalCarrito, setTotalCarrito] = useState (0)
     
-    console.log(cartProducts)
+    
 
     const addProductCart = (productos) =>{
         const productInCart = cartProducts.find( item => item.id === productos.id )

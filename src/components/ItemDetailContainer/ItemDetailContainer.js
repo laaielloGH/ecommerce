@@ -1,22 +1,17 @@
 import { useState, useEffect } from "react"
-import products from "../../utils/productsMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import "./ItemDetailContainer.scss"
 import { useParams } from "react-router-dom"
+import db from "../../firebaseConfig"
+import {doc, getDoc} from "firebase/firestore"
 
 const ItemDetailContainer = ({title}) => {
     const {id} = useParams()
     const [detalle, setDetalle] = useState([])
 
 
-    const getItem = new Promise((resolve, reject) => {
-        
-        resolve(products.some())
-        
-    })
-
     useEffect(() =>{
-        getItem 
+        getProduct()
         .then((res) =>{
             setDetalle(res)
         })
@@ -24,17 +19,16 @@ const ItemDetailContainer = ({title}) => {
             console.log("Hubo un error")
         })
         .finally(()=>{})
-
-        filterById()
         
-    }, [])
+    }, [id])
 
-    const filterById = () =>{
-        products.some((producto) =>{
-            if(producto.id == id){
-                setDetalle(producto)
-            }
-        })
+
+    const getProduct = async () =>{
+        const docRef= doc(db, "productos", id)
+        const docSnapshot = await getDoc(docRef)
+        let product = docSnapshot.data()
+        product.id = docSnapshot.id
+        return product
     }
 
     return(

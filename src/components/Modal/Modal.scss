@@ -1,0 +1,39 @@
+.diseñoModal{
+    top: 19%;
+    background-color: white;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    left: 19%;
+    height: 61vh;
+    overflow: hidden;
+    width: 61vw;
+    position: fixed;
+    align-items: center;
+    h2{
+        background-color: white;
+        color: black;
+    }
+    h3{
+        margin-top: 20px;
+        background-color: white;
+        color: black;
+
+    }
+    input{
+        background-color: white;
+        color: black;
+    }
+    button{
+        background-color: white;
+        color: black;
+    }
+}
+
+.botonCierre{
+    background-color: red !important;
+    margin-top: -40px;
+    margin-left: 1127px;
+    cursor: pointer;
+}
+

@@ -1,44 +1,34 @@
 import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.scss"
-import products from "../../utils/productsMock"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import db from "../../firebaseConfig"
 
 const ItemListContainer = ({calzado}) => {
 
     const {categoryid} = useParams()
-    console.log(categoryid)
-    const filterByCategory = products.filter((productos) => productos.category === categoryid)
+
     const [listProducts, setListProducts] = useState([])
-
-
-    const getProducts = new Promise ((resolve, reject) => {
-        
-        if(categoryid === "urbana" || categoryid === "deportiva"){
-            resolve (filterByCategory)
-        }
-        else{
-            resolve(products)
-        }
-        
-    })
-
+    
+    
     useEffect(() =>{
-        getProducts
-            .then((response)=>{
-                setListProducts(response) 
-            })
-            .catch((err)=>{
-                console.log("Hubo un fallo")
-            })
-            .finally(()=>{})
+       const queryCollection = collection(db, "productos")
+       if(categoryid){
+           const queryFilter = query(queryCollection, where("category", "==", categoryid))
+           getDocs(queryFilter)
+           .then(res => setListProducts(res.docs.map(product => ({id: product.id, ...product.data() }))))
+       }
+       else{
+           getDocs(queryCollection)
+           .then(res => setListProducts(res.docs.map(product => ({id: product.id, ...product.data() }))))
+       }
+
             
     }, [categoryid])
 
 
 
-
-    
     return(
         <div>
             <h1 className="tituloNike">{calzado}</h1>
