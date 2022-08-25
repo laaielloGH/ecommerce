@@ -4,16 +4,28 @@ import { CartContext } from "../Context/CartContext"
 import {Link} from "react-router-dom"
 import Modal from "../Modal/Modal"
 import "./Cart.scss"
+import db from "../../firebaseConfig"
+import {collection, addDoc} from "firebase/firestore"
 
 
 const Cart = () => {
 
     const [showModal, setShowModal] = useState(false)
     const {cartProducts, clear, removeFromCart, totalCarrito} = useContext(CartContext)
+    const [success, setSuccess] = useState()
     const [order, setOrder] = useState({
-        items: [],
+
+        items: cartProducts.map((product) =>{
+            return{
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                cantidad: product.contador
+            }
+        }),
         buyer: {},
-        total: 0
+        date: new Date().toLocaleDateString(), 
+        total: totalCarrito
     })
 
     const[formData, setFormData] = useState({
@@ -22,9 +34,24 @@ const Cart = () => {
         email: ""
     })
 
-    const handleChange = () =>{
+    const handleChange = (e) =>{
+
+        setFormData({...formData, [e.target.name] : e.target.value})
         
     }
+
+    const submitData = (e) =>{
+        e.preventDefault()
+        pushData({...order, buyer:formData})
+    }
+
+    const pushData = async (newOrder) =>{
+        const orderColecction = collection(db, "ordenes")
+        const orderDoc = await addDoc(orderColecction, newOrder)
+        setSuccess(orderDoc.id)
+    }
+
+    
       
     return(
         <>
@@ -80,29 +107,41 @@ const Cart = () => {
                             </div>
                         </div>
                         {showModal && 
-                            <Modal title="Formulario de compra" close={() => setShowModal()}>
-                                <form>
-                                    <input 
-                                    type="text" 
-                                    name="name" 
-                                    placeholder='Ingrese su nombre completo'
-                                    onChange={handleChange}
-                                    value={formData.name}
-                                    />
-                                    <input 
-                                    type="number" 
-                                    name="phone" 
-                                    placeholder='Ingrese su numero de telefono'
-                                    value={formData.phone}
-                                    />
-                                    <input 
-                                    type="email" 
-                                    name="email" 
-                                    placeholder='Ingrese su email'
-                                    value={formData.email}
-                                    />
-                                    <button>Enviar</button>
-                                </form>
+                            <Modal title="Formulario de compra" close={success ? () => setShowModal(clear): () => setShowModal()}>
+                                {success ? (
+                                    <div className='ordenRealizada'>
+                                        <h2>Su orden se generó correctamente</h2>
+                                        <img src="/assets/check2-circle.svg" alt="Checkout" className='imagenCheck'/>
+                                        <p className='color'>¡Gracias por su compra!</p>
+                                        <p className='color'>ID de compra: {success}</p>
+                                        <Link to="/"><button onClick={()=>clear()}>Volver a inicio</button></Link>
+                                    </div>
+                                ) : ( 
+                                    <form onSubmit={submitData} className="modalDesign">
+                                        <input 
+                                        type="text" 
+                                        name="name" 
+                                        placeholder='Ingrese su nombre completo'
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        />
+                                        <input 
+                                        type="number" 
+                                        name="phone" 
+                                        placeholder='Ingrese su numero de telefono'
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        />
+                                        <input 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder='Ingrese su email'
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        />
+                                        <button type="submit">Enviar</button>
+                                    </form>
+                                )}
                             </Modal>
                         }     
                 </div>) } 

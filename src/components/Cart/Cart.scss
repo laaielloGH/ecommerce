@@ -89,3 +89,34 @@
         }
     }
 }
+
+.modalDesign{
+    display: flex;
+    flex-direction: column;
+    width: 614px;
+    margin: 44px;
+    background-color: white;
+}
+
+.ordenRealizada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    margin-top: 25px;
+    a{
+        background-color: white;
+        margin-top: -8px;
+    }
+}
+.color{
+    background-color: white;
+    color: black; 
+}
+
+.imagenCheck{
+    background-color: white;
+    width: 97px;
+}
+
+
