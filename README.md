@@ -1,5 +1,7 @@
 # **Tienda Nike**
 
+![Ecommerce Nike - Google Chrome 2022-09-10 19-16-46 (1)](https://user-images.githubusercontent.com/101370514/189504435-6ab2491a-a11f-498c-952d-af11fd8000ae.gif)
+
 *Esta tienda te permitira comprar nuestras zapatillas y llevar una elegancia y estilo que nunca imaginaste, ya sean Urbanas o Deportivas, desde el lugar en que te encuentres.*
 
 ## **Instalacion**
